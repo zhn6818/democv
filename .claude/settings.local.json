@@ -3,7 +3,9 @@
     "allow": [
       "Bash(ls Debug/democv.exe)",
       "Bash(\"Debug/democv.exe\")",
-      "Bash(echo \"EXIT CODE: $?\")"
+      "Bash(echo \"EXIT CODE: $?\")",
+      "Bash(cmake .. -G \"Visual Studio 17 2022\" -A x64)",
+      "Bash(cmake --build . --config Debug -j)"
     ]
   }
 }
