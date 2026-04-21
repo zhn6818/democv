@@ -1,0 +1,82 @@
+{
+	// 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "cmake",
+			"type": "shell",
+			"options": {
+				"cwd": "${workspaceFolder}/build"
+			},
+			"command": "cmake",
+			"args": [
+				"..",
+				"-G",
+				"Visual Studio 17 2022",
+				"-A",
+				"x64"
+			],
+			"group": "build",
+			"problemMatcher": []
+		},
+		{
+			"label": "build",
+			"type": "shell",
+			"options": {
+				"cwd": "${workspaceFolder}/build"
+			},
+			"command": "cmake",
+			"args": [
+				"--build",
+				".",
+				"--config",
+				"Debug",
+				"-j"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [
+				"$msCompile"
+			],
+			"dependsOn": "cmake"
+		},
+		{
+			"label": "build-release",
+			"type": "shell",
+			"options": {
+				"cwd": "${workspaceFolder}/build"
+			},
+			"command": "cmake",
+			"args": [
+				"--build",
+				".",
+				"--config",
+				"Release",
+				"-j"
+			],
+			"group": "build",
+			"problemMatcher": [
+				"$msCompile"
+			],
+			"dependsOn": "cmake"
+		},
+		{
+			"label": "clean",
+			"type": "shell",
+			"options": {
+				"cwd": "${workspaceFolder}/build"
+			},
+			"command": "cmake",
+			"args": [
+				"--build",
+				".",
+				"--target",
+				"clean"
+			],
+			"group": "build",
+			"problemMatcher": []
+		}
+	]
+}

@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls Debug/democv.exe)",
+      "Bash(\"Debug/democv.exe\")",
+      "Bash(echo \"EXIT CODE: $?\")"
+    ]
+  }
+}
